@@ -9,18 +9,11 @@ function Projects() {
       <div className="absolute top-8 right-8 border-2 border-white/50 hover:border-white/70 hover:bg-amber-600 rounded-full cursor-pointer w-16 p-4" onClick={() => window.history.back()}>
         <img src="voltar.png" alt="Voltar" style={{ filter: 'invert(1)' }}/>
       </div>
-      <div onClick={() => window.location.href = '/chat'} className="flex flex-col w-full md:max-w-[55vw] lg:max-w-[35vw] xl:max-w-[25vw] bg-orange-400/30 hover:bg-orange-400/70 cursor-pointer backdrop-blur-lg p-4 rounded-4xl border-orange-500/50 border-2 justify-center text-center items-center lg:mb-0 mb-8 p-8 mt-42 lg:mt-0">
+      <div onClick={() => window.location.href = '/chat'} className="flex flex-col w-full md:max-w-[55vw] lg:max-w-[35vw] xl:max-w-[25vw] bg-orange-400/30 hover:bg-orange-400/70 cursor-pointer backdrop-blur-lg p-4 rounded-4xl border-orange-500/50 border-2 justify-center text-center items-center lg:mb-5 mb-8 p-8 mt-42 lg:mt-0">
         <img src="logo_solo.png" alt="AI App" className="w-24 h-24 mb-4"/>
         <h1 className="text-white text-2xl md:text-3xl mb-5 font-bold">
           Iniciar Chat
         </h1>
-      </div>
-
-      <div className="flex flex-col w-full md:max-w-[55vw] lg:max-w-[35vw] xl:max-w-[25vw] rounded-4xl justify-center text-center items-center">
-        <div className="flex flex-col w-full justify-start items-start mb-8">
-            <h1 className="text-white text-xl md:text-3xl my-5 font-bold">Projetos Salvos</h1>
-            <SwiperCarrocel />
-        </div>
       </div>
       
       

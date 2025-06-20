@@ -3,7 +3,7 @@ function MessageInput({ onSend, disabled }) {
     <div className="flex flex-row w-full items-center justify-center mt-4">
       <input
         type="text"
-        className="w-full p-4 rounded-2xl bg-white/80 backdrop-blur-lg text-black shadow-[0px_0px_20px_5px_rgba(255,_255,_255,_0.05)]"
+        className="w-full p-4 rounded-2xl bg-gray-100/40 backdrop-blur-lg text-black shadow-[0px_0px_20px_5px_rgba(255,_255,_255,_0.05)]"
         placeholder="Escreva uma mensagem..."
         disabled={disabled}
         onKeyDown={(e) => {

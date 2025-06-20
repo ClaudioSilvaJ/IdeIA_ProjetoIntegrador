@@ -82,7 +82,7 @@ function ChatView() {
         <img src="voltar.png" alt="Voltar" style={{ filter: 'invert(1)' }} />
       </div>
       <div className="flex flex-col w-full md:max-w-[60vw] lg:max-w-[45vw] xl:max-w-[30vw] h-[90vh] pt-48">
-        <div className="bg-white/80 backdrop-blur-lg shadow-[0px_0px_20px_5px_rgba(255,_255,_255,_0.05)] items-center flex-grow overflow-y-auto rounded-lg">
+        <div className="bg-gray-100/40 backdrop-blur-lg shadow-[0px_0px_20px_5px_rgba(255,_255,_255,_0.05)] items-center flex-grow overflow-y-auto rounded-lg">
           {messages.map((message) => (
             <MessageBox key={`${message.timestamp}-${message.user_id}`} message={message} />
           ))}

@@ -2,13 +2,13 @@
 function Home() {
 
   return (
-    <div className="flex flex-col w-full items-end h-screen p-4 justify-end lg:justify-center bg-gradient-to-t from-rose-950/10 to-orange-700/40 relative">
+    <div className="flex flex-col w-full items-end h-screen justify-end lg:justify-center bg-gradient-to-t to-rose-950/30 from-orange-700/10 relative">
       <img src="logo.png" alt="AI App" className="absolute top-10 left-1/2 transform -translate-x-1/2 object-cover"/>
-      <div className="flex flex-col w-full md:max-w-[55vw] lg:max-w-[35vw] xl:max-w-[25vw] bg-orange-400/30 backdrop-blur-lg p-4 rounded-4xl border-orange-500/50 border-2 justify-center text-center items-center lg:mr-24 lg:mb-0 mb-8 p-8">
+      <div className="flex flex-col w-full h-full xl:max-w-[25vw] bg-orange-400/30 backdrop-blur-lg border-orange-500/50 border-l-1 justify-center text-center items-center p-8">
         <h1 className="text-white text-2xl md:text-3xl mb-5 font-bold">
           Explore seu mundo novo de oportunidades
         </h1>
-        <p className="text-gray-100 text-lg md:text-xl font-semibold mb-5">
+        <p className="text-gray-200 text-lg md:text-xl font-semibold mb-5">
           Você está prestes a conhecer o protótipo do APP de IA que vai mudar para
           sempre o desenvolvimento de ideias de aplicativos!
         </p>

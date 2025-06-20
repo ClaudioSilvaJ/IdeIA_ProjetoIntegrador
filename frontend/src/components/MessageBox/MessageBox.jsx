@@ -14,21 +14,16 @@ function MessageBox({ message }) {
   }
 
   function dateToString(date) {
-    const dateFormated = new Date(date)
-      .toLocaleString('pt-BR', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-      })
-      .replace(',', '');
-    return dateFormated;
+    return new Date(date).toLocaleString('pt-BR', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    }).replace(',', '');
   }
 
   useEffect(() => {
-    console.log('MessageBox useEffect', message);
     if (message.user_id && message.user_id !== 'IA') {
       computeHash(message.user_id).then(setNumero);
     } else {
@@ -36,13 +31,27 @@ function MessageBox({ message }) {
     }
   }, [message.user_id]);
 
+  const isUser = message.user_id !== 'IA';
+  const avatarSrc = isUser ? '/user.png' : '/ia.png';
+
   return (
-    <div className="flex flex-col w-full p-4 shadow-md border-b border-neutral-600 hover:bg-neutral-200">
-      <div className="flex flex-row justify-between items-center mb-2 text-xl font-bold text-black ">
-        <p>Usuário - {numero}</p>
-        <p className="text-sm opacity-50">{dateToString(message.timestamp)}</p>
+    <div className={`flex w-full px-4 py-2 ${isUser ? 'justify-end' : 'justify-start'}`}>
+      <div className={`flex items-center gap-2 ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
+        <img
+          src={avatarSrc}
+          alt={isUser ? 'Usuário' : 'IA'}
+          className="w-10 h-10 rounded-full"
+        />
+        <div className={`max-w-[75%] p-3 rounded-2xl shadow-md text-white ${isUser ? 'bg-rose-800 text-right' : 'bg-orange-700 text-left'}`}>
+          <div className="text-sm font-semibold mb-1">
+            {isUser ? 'Você' : 'IA'}
+          </div>
+          <div className="whitespace-pre-wrap break-words">{message.message}</div>
+          <div className="text-xs opacity-60 mt-1">
+            {dateToString(message.timestamp)}
+          </div>
+        </div>
       </div>
-      <div className="text-black">{message.message}</div>
     </div>
   );
 }
