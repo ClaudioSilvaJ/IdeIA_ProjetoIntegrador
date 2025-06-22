@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from mongo import MongoDB
 from message_model import MessageModel
-from chatgpt import chatWithAI
+from chatgpt import chatWithAI, chat_with_genai
 from datetime import datetime
 import uuid
 import hashlib
@@ -59,7 +59,7 @@ async def create_message(
 ):
     sanitized_message = message.message.strip()
     message_hash = hashlib.sha256(sanitized_message.encode()).hexdigest()
-    message_ia = chatWithAI(sanitized_message)
+    message_ia = chat_with_genai(sanitized_message)
     message_id = str(uuid.uuid4())
     message_data = {
         "message": sanitized_message,

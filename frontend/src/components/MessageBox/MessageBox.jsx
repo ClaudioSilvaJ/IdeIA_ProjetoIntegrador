@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function MessageBox({ message }) {
+function MessageBox({ message, html, onOpenHtml }) {
   const [numero, setNumero] = useState('------');
 
   async function computeHash() {
@@ -47,7 +47,18 @@ function MessageBox({ message }) {
             {isUser ? 'Você' : 'IA'}
           </div>
           <div className="whitespace-pre-wrap break-words">{message.message}</div>
-          <div className="text-xs opacity-60 mt-1">
+          {!isUser && html && (
+            <div className="mt-3">
+              <button
+                onClick={() => onOpenHtml(html)}
+                className="text-xs px-3 py-1 rounded bg-white text-orange-700 hover:bg-orange-100 shadow"
+              >
+                Visualizar site gerado
+              </button>
+            </div>
+          )}
+
+          <div className="text-xs opacity-60 mt-2">
             {dateToString(message.timestamp)}
           </div>
         </div>
